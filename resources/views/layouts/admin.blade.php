@@ -39,14 +39,143 @@
         .badge-dim.badge-primary { background-color: rgba(var(--primary-color-rgb), 0.1) !important; color: var(--primary-color) !important; }
         .user-avatar.bg-primary { background-color: var(--primary-color) !important; }
         
-        .nk-sidebar { background: #1a1f2e !important; }
-        .nk-sidebar .nk-menu-heading h6 { color: var(--primary-color) !important; font-size: 10px; letter-spacing: 1.5px; }
-        .nk-menu-icon em { color: #8094ae; }
-        .nk-menu-item.active > .nk-menu-link, .nk-menu-item > .nk-menu-link:hover { background: rgba(var(--primary-color-rgb),.15) !important; border-radius: 6px; }
-        .nk-menu-item.active > .nk-menu-link .nk-menu-icon em,
-        .nk-menu-item > .nk-menu-link:hover .nk-menu-icon em { color: var(--primary-color) !important; }
-        .erp-brand { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
-        .erp-brand span { color: var(--primary-color) !important; }
+        /* -------------------------------------------------------------
+           PREMIUM ENTERPRISE DARK SIDEBAR COLOR SYSTEM
+           ------------------------------------------------------------- */
+        .nk-sidebar { 
+            background: #0d131f !important; /* Deep Obsidian Slate */
+            border-right: 1px solid rgba(255, 255, 255, 0.07) !important; 
+        }
+        
+        .nk-sidebar-head {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+            padding: 18px 24px !important;
+            background: #0d131f !important;
+        }
+
+        /* Brand / Logo */
+        .erp-brand { 
+            font-size: 1.15rem; 
+            font-weight: 800; 
+            letter-spacing: -0.02em; 
+            color: #ffffff !important; 
+            display: inline-flex;
+            align-items: center;
+        }
+        .erp-brand span { 
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--primary-color) !important;
+            background: rgba(var(--primary-color-rgb), 0.16) !important;
+            border: 1px solid rgba(var(--primary-color-rgb), 0.3) !important;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 8px;
+            line-height: 1.2;
+        }
+
+        /* Section Headings */
+        .nk-sidebar .nk-menu-heading {
+            padding: 1.35rem 1.5rem 0.45rem 1.5rem !important;
+        }
+        .nk-sidebar .nk-menu-heading h6,
+        .nk-sidebar .nk-menu-heading .overline-title { 
+            color: #64748b !important; /* Muted Slate-500: high-contrast legibility without visual fatigue */
+            font-size: 0.6875rem !important; 
+            font-weight: 700 !important;
+            letter-spacing: 0.08em !important; 
+            text-transform: uppercase !important;
+        }
+
+        /* Default / Inactive Menu Links */
+        .nk-sidebar .nk-menu-link { 
+            padding: 0.625rem 1.25rem !important; 
+            margin: 2px 10px !important; 
+            border-radius: 8px !important; 
+            color: #94a3b8 !important; /* Slate-400: clean, readable text on dark canvas */
+            font-weight: 500 !important; 
+            font-size: 0.875rem !important; 
+            transition: all 0.15s ease-in-out !important; 
+            border-left: 3px solid transparent !important;
+        }
+        
+        /* Menu Icons */
+        .nk-sidebar .nk-menu-icon em { 
+            color: #64748b !important; /* Slate-500 */
+            font-size: 1.2rem !important; 
+            transition: color 0.15s ease-in-out, filter 0.15s ease-in-out !important; 
+        }
+
+        /* Dropdown Chevron */
+        .nk-sidebar .nk-menu-toggle:after {
+            color: #64748b !important;
+            transition: color 0.15s ease-in-out, transform 0.2s ease !important;
+        }
+
+        /* Hover State */
+        .nk-sidebar .nk-menu-item > .nk-menu-link:hover { 
+            background: rgba(255, 255, 255, 0.06) !important; 
+            color: #ffffff !important; /* Crisp white text on hover */
+        }
+        .nk-sidebar .nk-menu-item > .nk-menu-link:hover .nk-menu-icon em { 
+            color: #e2e8f0 !important; 
+        }
+        .nk-sidebar .nk-menu-item > .nk-menu-link:hover.nk-menu-toggle:after {
+            color: #e2e8f0 !important;
+        }
+
+        /* Active Menu Item */
+        .nk-sidebar .nk-menu-item.active > .nk-menu-link { 
+            background: linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.22) 0%, rgba(var(--primary-color-rgb), 0.06) 100%) !important; 
+            color: #ffffff !important; /* Crisp pure white for maximum legibility */
+            font-weight: 600 !important; 
+            border-left: 3px solid var(--primary-color) !important; 
+            border-radius: 0 8px 8px 0 !important; 
+            margin-left: 0 !important; 
+            padding-left: calc(1.25rem + 7px) !important; 
+        }
+        .nk-sidebar .nk-menu-item.active > .nk-menu-link .nk-menu-icon em { 
+            color: var(--primary-color) !important; 
+            filter: drop-shadow(0 0 6px rgba(var(--primary-color-rgb), 0.45)); 
+        }
+        .nk-sidebar .nk-menu-item.active > .nk-menu-link.nk-menu-toggle:after {
+            color: #ffffff !important;
+        }
+
+        /* Submenus */
+        .nk-sidebar .nk-menu-sub {
+            background: rgba(0, 0, 0, 0.2) !important;
+            border-radius: 8px;
+            margin: 4px 10px 6px 10px !important;
+            padding: 6px 0 !important;
+        }
+        .nk-sidebar .nk-menu-sub .nk-menu-link {
+            padding: 0.42rem 1rem 0.42rem 2.5rem !important;
+            margin: 1px 6px !important;
+            color: #8fa0b5 !important;
+            font-size: 0.8125rem !important;
+            font-weight: 400 !important;
+            border-left: none !important;
+        }
+        .nk-sidebar .nk-menu-sub .nk-menu-link:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        .nk-sidebar .nk-menu-sub .nk-menu-item.active > .nk-menu-link {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            background: rgba(var(--primary-color-rgb), 0.16) !important;
+            border-radius: 6px !important;
+            padding-left: 2.5rem !important;
+        }
+
+        /* Simplebar Scrollbar Styling */
+        .nk-sidebar .simplebar-scrollbar:before {
+            background: rgba(255, 255, 255, 0.15) !important;
+        }
+
         .module-badge { font-size: 9px; padding: 2px 6px; border-radius: 3px; background: rgba(var(--primary-color-rgb),.2) !important; color: var(--primary-color) !important; margin-left: 6px; }
     </style>
 </head>
@@ -62,7 +191,7 @@
                             @if($logo = \App\Models\Setting::get('site_logo'))
                                 <img class="logo-light logo-img" src="{{ asset($logo) }}" alt="logo" style="max-height: 40px; width: auto; object-fit: contain;">
                             @else
-                                <span class="erp-brand">BPA<span> ERP</span></span>
+                                <span class="erp-brand">BPA<span>ERP</span></span>
                             @endif
                         </a>
                     </div>
@@ -85,7 +214,7 @@
 
                                 <!-- Module 1: Users & Roles -->
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">👥 Users & Roles</h6>
+                                    <h6 class="overline-title text-primary-alt">Users & Roles</h6>
                                 </li>
                                 <li class="nk-menu-item has-sub {{ request()->routeIs('admin.users.*','admin.roles.*','admin.departments.*','admin.designations.*') ? 'active' : '' }}">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -94,7 +223,7 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
-                                            <a href="{{ route('admin.users.index') }}" class="nk-menu-link"><span class="nk-menu-text">Users</span></a>
+                                             <a href="{{ route('admin.users.index') }}" class="nk-menu-link"><span class="nk-menu-text">Users</span></a>
                                         </li>
                                         <li class="nk-menu-item {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
                                             <a href="{{ route('admin.roles.index') }}" class="nk-menu-link"><span class="nk-menu-text">Roles & Permissions</span></a>
@@ -110,7 +239,7 @@
 
                                 <!-- Module 2: Asset Management -->
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">🔧 Asset Management</h6>
+                                    <h6 class="overline-title text-primary-alt">Asset Management</h6>
                                 </li>
                                 <li class="nk-menu-item has-sub {{ request()->routeIs('admin.assets.*', 'admin.asset-categories.*', 'admin.asset-locations.*') ? 'active' : '' }}">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -132,11 +261,11 @@
                                 
                                 <!-- Module 3: HR & Payroll -->
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">💼 HR & Payroll</h6>
+                                    <h6 class="overline-title text-primary-alt">HR & Payroll</h6>
                                 </li>
                                 <li class="nk-menu-item has-sub {{ request()->routeIs('admin.hr.employees.*', 'admin.hr.contracts.*', 'admin.hr.documents.*') ? 'active' : '' }}">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-users-card"></em></span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-contact"></em></span>
                                         <span class="nk-menu-text">Employee Records</span>
                                     </a>
                                     <ul class="nk-menu-sub">
@@ -211,7 +340,7 @@
                                 </li> -->
                                 <!-- Module 4: Helpdesk & Support -->
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">🎫 Helpdesk & Support</h6>
+                                    <h6 class="overline-title text-primary-alt">Helpdesk & Support</h6>
                                 </li>
                                 <li class="nk-menu-item has-sub {{ request()->routeIs('admin.helpdesk.*', 'admin.sla-policies.*', 'admin.kb-articles.*') ? 'active' : '' }}">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -234,7 +363,7 @@
                                 @if(Auth::user()?->hasRole('admin'))
                                 <!-- Settings -->
                                 <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">⚙️ Settings</h6>
+                                    <h6 class="overline-title text-primary-alt">Settings</h6>
                                 </li>
                                 <li class="nk-menu-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                                     <a href="{{ route('admin.settings.global') }}" class="nk-menu-link">
